@@ -1,0 +1,119 @@
+/* Tailwind CSS will be processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mf-resumen {
+  min-height: 100vh;
+  background-color: #F8F9FF;
+  margin: 0;
+  padding: 0;
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Summary specific styles
+.summary-card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  
+  &__header {
+    @apply text-center mb-6;
+  }
+
+  &__title {
+    @apply text-2xl font-bold text-rimac-blue mb-2;
+  }
+
+  &__subtitle {
+    @apply text-gray-600;
+  }
+
+  &__content {
+    @apply space-y-4;
+  }
+
+  &__item {
+    @apply flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0;
+  }
+
+  &__label {
+    @apply text-gray-600 font-medium;
+  }
+
+  &__value {
+    @apply font-semibold;
+  }
+
+  &__total {
+    @apply flex justify-between items-center py-4 border-t-2 border-rimac-blue mt-4;
+  }
+
+  &__total-label {
+    @apply text-xl font-bold text-rimac-blue;
+  }
+
+  &__total-value {
+    @apply text-2xl font-bold text-rimac-red;
+  }
+}
+
+// Info card styles
+.info-card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  
+  &__header {
+    @apply flex items-center space-x-3 mb-4;
+  }
+
+  &__icon {
+    @apply w-8 h-8 bg-rimac-blue text-white rounded-full flex items-center justify-center;
+  }
+
+  &__title {
+    @apply text-lg font-semibold text-rimac-blue;
+  }
+
+  &__content {
+    @apply space-y-3;
+  }
+
+  &__item {
+    @apply flex justify-between items-start;
+  }
+
+  &__label {
+    @apply text-gray-600 font-medium;
+  }
+
+  &__value {
+    @apply text-gray-900 font-semibold text-right;
+  }
+
+  &__description {
+    @apply text-sm text-gray-500 mt-1;
+  }
+}
+
+// Action buttons styles
+.action-buttons {
+  @apply flex flex-col sm:flex-row gap-4 justify-center;
+  
+  &__button {
+    @apply flex-1 sm:flex-none;
+  }
+}
+
+// Responsive adjustments
+@screen sm {
+  .action-buttons {
+    flex-direction: row;
+  }
+}
+
+@screen lg {
+  .summary-card__content {
+    @apply grid grid-cols-2 gap-4;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "reto-tecnico-rimac",
+  "version": "1.0.0",
+  "description": "Reto técnico RIMAC - Microfrontends con Webpack Module Federation",
+  "private": true,
+  "workspaces": [
+    "mf-shell",
+    "mf-home",
+    "mf-planes",
+    "mf-resumen",
+    "shared"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "dev": "concurrently \"npm run dev:shell\" \"npm run dev:home\" \"npm run dev:planes\" \"npm run dev:resumen\"",
+    "dev:shell": "cd mf-shell && npm run dev",
+    "dev:home": "cd mf-home && npm run dev",
+    "dev:planes": "cd mf-planes && npm run dev",
+    "dev:resumen": "cd mf-resumen && npm run dev",
+    "build": "npm run build:shared && npm run build:home && npm run build:planes && npm run build:resumen && npm run build:shell",
+    "build:shared": "cd shared && npm run build",
+    "build:home": "cd mf-home && npm run build",
+    "build:planes": "cd mf-planes && npm run build",
+    "build:resumen": "cd mf-resumen && npm run build",
+    "build:shell": "cd mf-shell && npm run build",
+    "install:all": "npm install && cd mf-shell && npm install && cd ../mf-home && npm install && cd ../mf-planes && npm install && cd ../mf-resumen && npm install && cd ../shared && npm install",
+    "clean": "rm -rf node_modules mf-shell/node_modules mf-home/node_modules mf-planes/node_modules mf-resumen/node_modules shared/node_modules",
+    "clean:build": "rm -rf mf-shell/dist mf-home/dist mf-planes/dist mf-resumen/dist shared/dist"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

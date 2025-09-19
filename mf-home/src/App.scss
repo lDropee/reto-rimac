@@ -1,0 +1,22 @@
+/* Tailwind CSS will be processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mf-home {
+  min-height: 100vh;
+  background-color: #F8F9FF;
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Custom styles that complement Tailwind
+.rimac-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  border: 1px solid #f0f0f0;
+}

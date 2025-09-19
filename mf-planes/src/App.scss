@@ -1,0 +1,115 @@
+/* Tailwind CSS will be processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mf-planes {
+  min-height: 100vh;
+  background-color: #F8F9FF;
+
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Plan selection specific styles
+.plan-selection {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @screen md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @screen lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200 cursor-pointer transition-all duration-200;
+    
+    &:hover {
+      @apply shadow-xl transform -translate-y-1;
+    }
+
+    &--selected {
+      @apply ring-2 ring-rimac-red border-rimac-red;
+    }
+  }
+
+  &__header {
+    @apply text-center mb-4;
+  }
+
+  &__name {
+    @apply text-xl font-bold text-rimac-blue mb-2;
+  }
+
+  &__price {
+    @apply text-3xl font-bold text-rimac-red mb-1;
+  }
+
+  &__price-period {
+    @apply text-sm text-gray-500;
+  }
+
+  &__description {
+    @apply space-y-2 mb-6;
+  }
+
+  &__description-item {
+    @apply flex items-start space-x-2 text-sm text-gray-600;
+  }
+
+  &__check {
+    @apply text-green-500 mt-0.5 flex-shrink-0;
+  }
+
+  &__footer {
+    @apply mt-auto;
+  }
+
+  &__select-btn {
+    @apply w-full;
+  }
+
+  &__discount {
+    @apply text-sm text-green-600 font-medium;
+  }
+}
+
+// Mobile slider styles (optional)
+.plan-slider {
+  @apply overflow-x-auto;
+  
+  &__container {
+    @apply flex space-x-4 pb-4;
+    min-width: max-content;
+  }
+
+  &__item {
+    @apply flex-shrink-0 w-80;
+  }
+}
+
+// Responsive adjustments
+@screen sm {
+  .plan-selection__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@screen md {
+  .plan-selection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@screen lg {
+  .plan-selection__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

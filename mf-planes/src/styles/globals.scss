@@ -1,0 +1,139 @@
+/* Tailwind CSS will be processed by PostCSS */
+
+// Global styles for mf-planes
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8F9FF;
+}
+
+// RIMAC Brand Colors
+:root {
+  --rimac-bg: #F8F9FF;
+  --rimac-green: #00FF7F;
+  --rimac-dark: #03050F;
+  --rimac-blue: #1B365D;
+  --rimac-red: #EF3340;
+  --rimac-gray: #6F7C87;
+  --rimac-light-gray: #F7F8FA;
+  --rimac-purple: #8B5CF6;
+  --rimac-purple-light: #E8F4FD;
+}
+
+// Utility classes
+.text-rimac-bg {
+  color: var(--rimac-bg);
+}
+
+.bg-rimac-bg {
+  background-color: var(--rimac-bg);
+}
+
+.text-rimac-green {
+  color: var(--rimac-green);
+}
+
+.bg-rimac-green {
+  background-color: var(--rimac-green);
+}
+
+.text-rimac-dark {
+  color: var(--rimac-dark);
+}
+
+.bg-rimac-dark {
+  background-color: var(--rimac-dark);
+}
+
+.text-rimac-blue {
+  color: var(--rimac-blue);
+}
+
+.bg-rimac-blue {
+  background-color: var(--rimac-blue);
+}
+
+.text-rimac-red {
+  color: var(--rimac-red);
+}
+
+.bg-rimac-red {
+  background-color: var(--rimac-red);
+}
+
+.text-rimac-purple {
+  color: var(--rimac-purple);
+}
+
+.bg-rimac-purple {
+  background-color: var(--rimac-purple);
+}
+
+.text-rimac-purple-light {
+  color: var(--rimac-purple-light);
+}
+
+.bg-rimac-purple-light {
+  background-color: var(--rimac-purple-light);
+}
+
+// Card styles
+.rimac-card {
+  @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+}
+
+// Button styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background-color: var(--rimac-red);
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: #dc2626;
+  }
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+  
+  &:hover:not(:disabled) {
+    background-color: #4b5563;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--rimac-blue);
+  color: var(--rimac-blue);
+  
+  &:hover:not(:disabled) {
+    background-color: var(--rimac-blue);
+    color: white;
+  }
+}

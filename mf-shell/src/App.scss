@@ -1,0 +1,39 @@
+/* Tailwind CSS will be processed by PostCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  &__main {
+    min-height: calc(100vh - 80px);
+  }
+}
+
+// Custom styles for RIMAC brand
+.rimac-button {
+  @apply bg-rimac-red text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+  
+  &:hover {
+    @apply bg-red-600;
+  }
+  
+  &:disabled {
+    @apply bg-gray-300 cursor-not-allowed;
+  }
+}
+
+.rimac-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rimac-blue focus:border-transparent;
+}
+
+.rimac-card {
+  @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+}
+
+// Loading states
+.loading-overlay {
+  @apply fixed inset-0 bg-white bg-opacity-75 flex items-center justify-center z-50;
+}
